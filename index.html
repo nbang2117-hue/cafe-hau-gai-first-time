@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" href="css/valentine.css" />
+  </head>
+  <body>
+    <div id="valentineQuestion"><b>Đi maid cafe với mìn nhé bánh đậu xanhh?</b></div>
+    <button class="answerButton" id="yesButton" onclick="location.href='thankyou.html'">
+      Có
+    </button>
+    <button class="answerButton" id="noButton">Không</button>
+    <br />
+    <img src="cat.gif" alt="cat asking question" class="responsive" />
+
+    <script>
+      const yesButton = document.getElementById("yesButton");
+      const noButton = document.getElementById("noButton");
+      let noClickCount = 0;
+      const maxNoClickBeforeReveal = 7;
+
+      noButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        noClickCount += 1;
+
+        if (noClickCount >= maxNoClickBeforeReveal) {
+          yesButton.style.position = "fixed";
+          yesButton.style.left = "0";
+          yesButton.style.top = "0";
+          yesButton.style.width = "100vw";
+          yesButton.style.height = "100vh";
+          yesButton.style.margin = "0";
+          yesButton.style.padding = "0";
+          yesButton.style.borderRadius = "0";
+          yesButton.style.fontSize = "72px";
+          yesButton.style.zIndex = "9999";
+          yesButton.style.opacity = "1";
+          yesButton.style.background = "#fff5e4";
+          yesButton.style.boxShadow = "none";
+          yesButton.style.transform = "scale(1)";
+          yesButton.style.transition = "all 0.3s ease";
+
+          noButton.style.opacity = "0";
+          noButton.style.pointerEvents = "none";
+          noButton.style.transform = "scale(0.8)";
+          noButton.style.transition = "all 0.25s ease";
+
+          document.body.style.overflow = "hidden";
+          return;
+        }
+
+        const currentFontSize = parseInt(
+          window.getComputedStyle(yesButton).fontSize,
+          10
+        );
+        const nextFontSize = currentFontSize + 12;
+        yesButton.style.fontSize = `${nextFontSize}px`;
+        yesButton.style.transition = "font-size 0.25s ease, transform 0.25s ease";
+        yesButton.style.transform = "scale(1.05)";
+
+        setTimeout(() => {
+          yesButton.style.transform = "scale(1)";
+        }, 180);
+
+        const maxX = window.innerWidth - 220;
+        const maxY = window.innerHeight - 220;
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        noButton.style.position = "absolute";
+        noButton.style.left = randomX + "px";
+        noButton.style.top = randomY + "px";
+        noButton.style.transform = "scale(1.05)";
+
+        setTimeout(() => {
+          noButton.style.transform = "scale(1)";
+        }, 180);
+      });
+    </script>
+  </body>
+</html>
