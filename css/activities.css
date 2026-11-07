@@ -38,3 +38,9 @@ body {
   border-radius: 12px;
   border: 2px solid #ffe3e1;
 }
+
+#appointment-summary { color: #ad5966; line-height: 1.6; padding: 0 12px; }
+.edit-date { display: inline-block; font: inherit; margin-bottom: 24px; text-underline-offset: 4px; }
+.edit-date:link, .edit-date:visited, .edit-date:hover, .edit-date:active { color: #ff9494; }
+.send-note, #send-status { max-width: 560px; margin: 18px auto; padding: 0 16px; color: #ad5966; line-height: 1.6; }
+.button:disabled { opacity: .65; cursor: wait; }
