@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activities</title>
     <link rel="stylesheet" href="css/activities.css" />
+    <script src="rsvp-config.js" defer></script>
+    <script src="rsvp.js" defer></script>
   </head>
   <body>
     <div id="activityquestion"><b>Cậu muốn làm gì sau đó không?</b></div>
+    <form id="rsvp-form">
+    <p id="appointment-summary" aria-live="polite"></p>
+    <a class="edit-date" href="date.html">Sửa ngày và giờ hẹn</a>
     <div class="activities-selection">
       <div class="activity-item">
         <img src="activities/arcade.jpeg" alt="Chơi game" />
@@ -36,8 +41,12 @@
         >
       </div>
     </div>
-    <button class="button" onclick="location.href='lastpage.html'">
-      Tiếp
+    <p class="send-note">Bấm gửi để báo ngày, giờ và hoạt động cậu chọn cho người mời nhé ♡</p>
+    <p id="send-status" role="status" aria-live="polite"></p>
+    <button class="button" id="send-answer" type="submit">
+      Gửi câu trả lời ♡
     </button>
+    <noscript>Cậu cần bật JavaScript để gửi câu trả lời nhé.</noscript>
+    </form>
   </body>
 </html>
