@@ -24,6 +24,29 @@ form .header {
   flex-direction: column;
   justify-content: center;
   font-size: 25px;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.date-time-fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 16px 0;
+  max-width: 100%;
+}
+
+.date-time-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 260px;
+  max-width: 100%;
+}
+
+.date-time-field label {
+  font-size: 20px;
 }
 
 .button {
@@ -46,7 +69,8 @@ form .header {
   border: 2px solid #ff9494;
 }
 
-input[type="date"] {
+input[type="date"],
+input[type="time"] {
   padding: 6px 10px;
   font-size: 15px;
   cursor: pointer;
@@ -57,4 +81,10 @@ input[type="date"] {
   color: #e67373;
   border-radius: 12px;
   border: 2px solid #ffe3e1;
+  min-width: 0;
+}
+
+input:focus-visible {
+  outline: 2px solid #e67373;
+  outline-offset: 3px;
 }

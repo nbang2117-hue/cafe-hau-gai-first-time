@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Date</title>
+    <title>Chọn ngày và giờ hẹn</title>
     <link rel="stylesheet" href="css/date.css" />
   </head>
   <body>
     <h1 title="choose a date">Cậu rảnh vào hôm nào tuần sau Hà Anh ơi...</h1>
-    <form class="form-group">
-      <label>Ngày nào: (chọn 1 ngày nhé)</label>
-      <div>
-        <input type="date" />
-        <button class="button" type="submit" formaction="menu.html">
-          Tiếp
-        </button>
+    <form class="form-group" action="menu.html" method="get">
+      <div class="date-time-fields">
+        <div class="date-time-field">
+          <label for="date">Ngày nào nè?</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+        <div class="date-time-field">
+          <label for="time">Mấy giờ mình gặp nhau?</label>
+          <input id="time" name="time" type="time" step="60" required />
+        </div>
       </div>
+      <button class="button" type="submit">Tiếp ♡</button>
     </form>
   </body>
 </html>
